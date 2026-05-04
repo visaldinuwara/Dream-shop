@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: dream-shop
+
+datasource:
+  url: jdbc:mysql://localhost:3306/dream_shop
+  username: root
+  password: 12344321
