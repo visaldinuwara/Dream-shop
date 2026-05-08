@@ -14,3 +14,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
+
+api:
+  prefix: /api/v1
