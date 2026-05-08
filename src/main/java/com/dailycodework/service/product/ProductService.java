@@ -65,7 +65,7 @@ public class ProductService implements IProductService {
     @Override
     public Product updateProduct(Product existingProduct, Long id) {
         return productRepo.findById(id)
-            .map(existingProduct->{updateExistingProduct(existingProduct, request)})
+            .map(existingProduct->updateExistingProduct(existingProduct,request))
             .map(productRepo::save)
             .orElseThrow(()->new ProductNotFoundException("Product not found!"));
     }
