@@ -63,7 +63,7 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Product updateProduct(Product existingProduct, Long id) {
+    public Product updateProduct(UpdateProductRequest existingProduct, Long id) {
         return productRepo.findById(id)
             .map(existingProduct->updateExistingProduct(existingProduct,request))
             .map(productRepo::save)
@@ -83,12 +83,12 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> getProductsByCategory(Long category) {
-        return productRepo.findByCategoryAndName(category);
+    public List<Product> getProductsByCategory(String category) {
+        return productRepo.findProductsByCategory(category);
     }
 
     @Override
-    public List<Product> getroductsByBrand(String brand) {
+    public List<Product> getProductsByBrand(String brand) {
         return productRepo.findByBrandName(brand);
     }
 
